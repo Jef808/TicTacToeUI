@@ -1,0 +1,17 @@
+require_relative '../lib/TicTacToe.rb'
+
+puts "Hi! Do you want to play a game of Tic-Tac-Toe? (Y/n)"
+
+_input = gets.chomp
+
+until /n/i =~ _input do
+  puts "Alright! Starting a new game right away..."
+  game = TicTacToe.new
+  game.display_board
+  game.play
+
+  puts "Would you like to play another game? (Y/n)"
+  _input = gets.chomp
+end
+
+abort("Too bad!")
